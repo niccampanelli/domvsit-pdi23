@@ -4,3 +4,6 @@ Projeto de engenharia e arquitetura de software utilizando microserviços basead
 
 ## Diagrama de Arquitetura
 ![Diagrama de Arquitetura](./architecture.svg)
+
+## Fluxo de Autenticação
+![Fluxo de Autenticação](./auth_flow.svg)
