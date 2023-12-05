@@ -1,3 +1,6 @@
 [submodule "domvsit-pdi23-auth"]
 	path = domvsit-pdi23-auth
 	url = https://github.com/niccampanelli/domvsit-pdi23-auth.git
+[submodule "domvsit-pdi23-clients"]
+	path = domvsit-pdi23-clients
+	url = https://github.com/niccampanelli/domvsit-pdi23-clients.git
