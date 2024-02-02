@@ -7,3 +7,6 @@
 [submodule "domvsit-pdi23-portal"]
 	path = domvsit-pdi23-portal
 	url = https://github.com/niccampanelli/domvsit-pdi23-portal.git
+[submodule "domvsit-pdi23-events"]
+	path = domvsit-pdi23-events
+	url = https://github.com/niccampanelli/domvsit-pdi23-events.git
