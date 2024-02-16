@@ -1,0 +1,64 @@
+version: '3.8'
+services:
+  dbauth:
+    image: postgres
+    environment:
+      - POSTGRES_DB=pdiauth
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    
+  dbclients:
+    image: postgres
+    environment:
+      - POSTGRES_DB=pdiclients
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5433:5432"
+
+  dbevents:
+    image: postgres
+    environment:
+      - POSTGRES_DB=pdievents
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5434:5432"
+
+  msauth:
+    build:
+      context: ./domvsit-pdi23-auth
+      dockerfile: /API/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - dbauth
+
+  msclients:
+    build:
+      context: ./domvsit-pdi23-clients
+      dockerfile: /API/Dockerfile
+    ports:
+      - "5001:80"
+    depends_on:
+      - dbclients
+
+  msevents:
+    build:
+      context: ./domvsit-pdi23-events
+      dockerfile: /API/Dockerfile
+    ports:
+      - "5002:80"
+    depends_on:
+      - dbevents
+
+  portal:
+    build: ./domvsit-pdi23-portal
+    ports:
+      - "3000:3000"
+    depends_on:
+      - msauth
+      - msclients
+      - msevents
