@@ -26,6 +26,10 @@ cd domvsit-pdi23
 ```
 3. Rode o comando para subir os serviços
 ```shell
-docker-compose up
+docker-compose up -d
+```
+ou
+```shell
+docker compose up -d
 ```
 4. Acesse o frontend em http://localhost:3000
